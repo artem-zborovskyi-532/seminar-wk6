@@ -21,7 +21,7 @@ def splitText(text:str, delimiters:str) -> list[str]:
                 res.append("".join(word))
                 word = []
         else:
-            word += char
+            word.append(char)
     if word:
         res.append("".join(word))
     return res
