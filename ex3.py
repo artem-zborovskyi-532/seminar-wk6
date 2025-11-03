@@ -14,13 +14,16 @@
 
 def splitText(text:str, delimiters:str) -> list[str]:
     res = []
-    word = ""
+    word = []
     for char in text:
         if char in delimiters:
-            res.append(word)
-            word = ""
+            if word:
+                res.append("".join(word))
+                word = []
         else:
             word += char
+    if word:
+        res.append("".join(word))
     return res
 
 sampleText = "As Python's creator, I'd like to say a few words about its origins."
