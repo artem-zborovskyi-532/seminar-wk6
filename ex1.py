@@ -22,7 +22,6 @@ def find_pairs_bf(nums:list[int], target) -> list[int]:
     for index, n in enumerate(nums):
         if index != len(nums) - 1:
             for i in nums[(index + 1):len(nums)]:
-                print(f"{n} + {i} = {n + i}")
                 if n + i == target:
                     res.append((n, i))
     return res
